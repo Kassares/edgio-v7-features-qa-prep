@@ -14,4 +14,14 @@ export default new Router()
       },
     },
     { access: { deny_access: true } } //
+  )
+
+  // Combining status code 401 with the WWW-Authenticate response header allows you to prompt a user for authentication.
+  .if(
+    {
+      edgeControlCriteria: {
+        "===": [{ "request.origin_query": "tokenAuth" }, "true"],
+      },
+    },
+    { access: { token_auth: true } }
   );
