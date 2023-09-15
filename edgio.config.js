@@ -2,31 +2,32 @@
 // You should commit this file to source control.
 // Learn more about this file at https://docs.edg.io/guides/edgio_config
 module.exports = {
+  connector: "@edgio/nodejs-connector",
+
   // The name of the site in Edgio to which this app should be deployed.
-  // name: 'my-site-name',
   // The name of the organization in Edgio to which this app should be deployed.
   // organization: 'my-organization-name',
   // Overrides the default path to the routes file. The path should be relative to the root of your app.
   // routes: 'routes.js',
   // If you need to proxy some URLs to an origin instead of your Next.js app, you can configure the origins here:
-  // origins: [
-  //   {
-  //     // The name of the backend origin
-  //     name: "origin",
-  //
-  //     // When provided, the following value will be sent as the host header when connecting to the origin.
-  //     // If omitted, the host header from the browser will be forwarded to the origin.
-  //     override_host_header: "test-origin.edgio.net",
-  //
-  //     // The list of backend hosts
-  //     hosts: [
-  //       {
-  //         // The domain name or IP address of the origin server
-  //         location: "test-origin.edgio.net"
-  //       }
-  //     ]
-  //   }
-  // ],
+  origins: [
+    {
+      // The name of the backend origin
+      name: "origin",
+
+      // When provided, the following value will be sent as the host header when connecting to the origin.
+      // If omitted, the host header from the browser will be forwarded to the origin.
+      override_host_header: "test-origin.edgio.net",
+
+      // The list of backend hosts
+      hosts: [
+        {
+          // The domain name or IP address of the origin server
+          location: "test-origin.edgio.net"
+        }
+      ]
+    }
+  ],
   // Options for hosting serverless functions on Edgio
   // serverless: {
   //   // Set to true to include all packages listed in the dependencies property of package.json when deploying to Edgio.
@@ -48,7 +49,7 @@ module.exports = {
   //   '**/*', // include all files
   //   '!(**/secrets/**/*)', // except everything in the secrets directory
   // ],
-  connector: '@edgio/nodejs-connector',
+  name: "edgio-v7-features-qa-prep",
 
   nodejsConnector: {
     buildFolder: "",
@@ -59,4 +60,4 @@ module.exports = {
     devCommand: "",
     devReadyMessageOrTimeout: 0
   }
-}
+};

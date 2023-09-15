@@ -2,23 +2,8 @@
   "scripts": {
     "edgio:dev": "edgio dev",
     "edgio:build": "edgio build",
-    "edgio:deploy": "edgio deploy",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "edgio:deploy": "edgio deploy"
   },
-  "name": "edgio-v7-features-qa-prep",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Kassares/edgio-v7-features-qa-prep.git"
-  },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/Kassares/edgio-v7-features-qa-prep/issues"
-  },
-  "homepage": "https://github.com/Kassares/edgio-v7-features-qa-prep#readme",
   "devDependencies": {
     "@edgio/cli": "^7.2.5",
     "@edgio/core": "^7.2.5",
