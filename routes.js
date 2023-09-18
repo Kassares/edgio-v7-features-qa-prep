@@ -24,4 +24,18 @@ export default new Router()
       },
     },
     { access: { token_auth: true } }
+  )
+
+  // Determines whether URL comparisons made by the following Token-Based Authentication parameters are case-sensitive:
+  //   ec_url_allow
+  //   ec_ref_allow
+  //   ec_ref_deny
+  // NOTE: token auth not supposed to work currently in Edgio v7
+  .if(
+    {
+      edgeControlCriteria: {
+        "===": [{ "request.origin_query": "ignoreToken" }, "true"],
+      },
+    },
+    { access: { token_auth_ignore_url_case: true } }
   );
