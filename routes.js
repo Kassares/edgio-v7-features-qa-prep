@@ -38,4 +38,12 @@ export default new Router()
       },
     },
     { access: { token_auth_ignore_url_case: true } }
-  );
+  )
+
+  // Main usage - media files
+  // Sets bandwidth or speed limit 1024 kb/s for load and delay 20s until until throttling bandwidth
+  .always({
+    caching: {
+      bandwidth_throttling: { kbytes_per_sec: 1024, prebuf_seconds: 20 },
+    },
+  });
